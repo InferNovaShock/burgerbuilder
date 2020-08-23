@@ -5,6 +5,7 @@
 }
 
 body {
+    background-color: rgb(247, 239, 244);
     font-family: sans-serif;
     padding: 30px;
 }
@@ -27,18 +28,8 @@ body {
 }
 
 .ingredients-component {
-    background-color: #5e3ce5;
     padding: 10px;
-    overflow: auto;
     max-width: 300px;
-    height: 90vh;
-}
-
-.menu-right {
-    margin-left: 60px;
-    padding: 30px;
-    background-color: #5e3ce5;
-    height: 90vh;
 }
 
 .burger-component {
@@ -46,9 +37,20 @@ body {
 }
 
 .toppings-component {
-    margin: 0 auto;
+    padding: 10px;
+    max-width: 300px;
 }
 
 .mx-auto {
     margin: 0 auto;
+}
+
+.flex-x {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-y {
+    display: flex;
+    align-items: center;
 }

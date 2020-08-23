@@ -5,13 +5,11 @@ const initalState = {
     item: {},
 };
 
-const ingredientReduction = (ingredients, ingredientToRemove) => {
+const ingredientReducer = (ingredients, ingredientToRemove) => {
     for (let ingredient in ingredients) {
         if (ingredients[ingredient] === ingredientToRemove) {
-            return [
-                ...ingredients.splice(0, ingredient),
-                ...ingredients.splice(ingredient + 1),
-            ];
+            ingredients.splice(ingredient, 1);
+            return [...ingredients];
         }
     }
 };
@@ -24,15 +22,18 @@ export default (state = initalState, action) => {
                 items: [...state.items, action.payload],
             };
         case REMOVE_INGREDIENTS:
-            if (state.items.length > 0) {
-                const ingredientList = ingredientReduction(
+            if (
+                state.items.length > 0 &&
+                state.items.includes(action.payload)
+            ) {
+                const leftIngredients = ingredientReducer(
                     state.items,
                     action.payload
                 );
 
                 return {
                     ...state,
-                    items: ingredientList,
+                    items: leftIngredients,
                 };
             }
 

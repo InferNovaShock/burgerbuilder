@@ -12,24 +12,26 @@ const createIngredientsList = (ingredients, addHandler, removeHandler) => {
     for (let ingredient in ingredients) {
         temporaryIngredients.push(
             <div key={ingredient} className="ingredient-row row">
-                <div className="col">{ingredient.toUpperCase()}</div>
-                <div className="col">
-                    <button
-                        className="button-primary"
-                        name={ingredients[ingredient].type}
-                        onClick={addHandler}
-                    >
-                        +
-                    </button>
-                </div>
-                <div className="col">
-                    <button
-                        className="button-primary"
-                        name={ingredients[ingredient].type}
-                        onClick={removeHandler}
-                    >
-                        -
-                    </button>
+                <div className="col flex-y">{ingredient.toUpperCase()}</div>
+                <div className="mx-left">
+                    <div className="col">
+                        <button
+                            className="neu-light btn-action"
+                            name={ingredients[ingredient].type}
+                            onClick={addHandler}
+                        >
+                            &#43;
+                        </button>
+                    </div>
+                    <div className="col">
+                        <button
+                            className="neu-light btn-action"
+                            name={ingredients[ingredient].type}
+                            onClick={removeHandler}
+                        >
+                            &#8722;
+                        </button>
+                    </div>
                 </div>
             </div>
         );
@@ -50,9 +52,7 @@ class Ingredients extends React.Component {
     };
 
     render = () => {
-        const { ingredients, ingredientItems } = this.props;
-
-        console.log(ingredientItems);
+        const { ingredients } = this.props;
 
         return (
             <div className="ingredients">
@@ -66,10 +66,6 @@ class Ingredients extends React.Component {
     };
 }
 
-const mapStateToProps = (state) => ({
-    ingredientItems: state.ingredients.items,
-});
-
-export default connect(mapStateToProps, { addIngredients, removeIngredients })(
+export default connect(null, { addIngredients, removeIngredients })(
     Ingredients
 );

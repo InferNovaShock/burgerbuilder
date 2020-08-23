@@ -8,13 +8,19 @@ import "./css/main.css";
 
 const ingredients = {
     cheddar: {
-        type: "Cheese",
+        type: "Cheddar",
     },
     beef: {
-        type: "Meat",
+        type: "Beef",
     },
     Lettuce: {
-        type: "Salad",
+        type: "Lettuce",
+    },
+    Mushroom: {
+        type: "Mushroom",
+    },
+    Onion: {
+        type: "Onion",
     },
 };
 
@@ -26,15 +32,11 @@ const App = () => {
                     <div className="col ingredients-component">
                         <Ingredients ingredients={ingredients} />
                     </div>
-                    <div className="col menu-right">
-                        <div className="row">
-                            <div className="col burger-component">
-                                <Burger />
-                            </div>
-                            <div className="col toppings-component">
-                                <Toppings ingredients={ingredients} />
-                            </div>
-                        </div>
+                    <div className="col burger-component">
+                        <Burger />
+                    </div>
+                    <div className="col toppings-component">
+                        <Toppings ingredients={ingredients} />
                     </div>
                 </div>
             </div>

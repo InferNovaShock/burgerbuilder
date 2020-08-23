@@ -1,12 +1,9 @@
-/* main color: #5E3CE5
-*/
-
 .ingredients {
-    background-color: purple;
+    background-color: inherit;
 }
 
 .ingredient-row:first-child {
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 30px;
 }
 
@@ -18,19 +15,55 @@
 
 .ingredient-row:last-child {
     margin-top: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
-.button-primary {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 1px solid black;
+.ingredient-row button {
+    margin-right: 10px;
 }
 
-.button-primary:hover {
+.mx-left {
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-action {
+    color: #444;
+}
+.btn-action:hover {
+    color: #321;
+}
+
+button {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    border: 0;
+    outline: 0;
+    font-weight: bold;
     cursor: pointer;
-    background-color: black;
-    color: white;
-    border: 1px solid black;
+    border-radius: 50%;
+    transition: 0.25s;
+}
+
+button.neu-light {
+    background-color: rgb(247, 239, 244);
+    filter: drop-shadow(3.4px 3.4px 3.4px rgb(183, 177, 200))
+        drop-shadow(-3.4px -3.4px 3.4px white);
+    -webkit-filter: drop-shadow(3.4px 3.4px 3.4px rgb(183, 177, 200))
+        drop-shadow(-3.4px -3.4px 3.4px white);
+    box-shadow: inset 4.3px 4.3px 7px #fff;
+}
+
+button.neu-light:hover {
+    filter: drop-shadow(5px 5px 3.4px rgb(183, 177, 181));
+    -webkit-filter: drop-shadow(5px 5px 3.4px rgb(183, 177, 181));
+    box-shadow: inset 2.5px 2.5px 2.5px #fff;
+}
+
+button.neu-light:active {
+    filter: drop-shadow(0px 0px 0px rgb(183, 177, 181));
+    -webkit-filter: drop-shadow(0px 0px 0px rgb(183, 177, 181));
+    box-shadow: inset 4.3px 4.3px 7px rgb(183, 177, 181);
 }
