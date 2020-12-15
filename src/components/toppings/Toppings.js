@@ -1,37 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import "./toppings.css";
 
-class Topping extends React.Component {
-    amountOfIngredients = () => {
-        const { ingredientItems } = this.props;
-        const ingredientsAmount = {};
-        const ingredientsList = [];
+const IngredientList = ({ ingredientItems }) => {
+    const ingredientsAmount = {};
 
-        for (let ingredient in ingredientItems) {
-            ingredientsAmount[ingredientItems[ingredient]] = 0;
-        }
+    for (let ingredient of ingredientItems) {
+        ingredientsAmount[ingredient] = 0;
+    }
 
-        for (let ingredient in ingredientItems) {
-            ingredientsAmount[ingredientItems[ingredient]]++;
-        }
+    for (let ingredient of ingredientItems) {
+        ingredientsAmount[ingredient]++;
+    }
 
-        for (let piece in ingredientsAmount) {
-            ingredientsList.push(
-                <div key={piece} className="justify-content-between">
-                    <div>{piece.toUpperCase()}</div>
-                    <div>{ingredientsAmount[piece]}x</div>
-                </div>
-            );
-        }
+    const ingredientsNames = Object.keys(ingredientsAmount);
 
-        return ingredientsList;
-    };
+    return ingredientsNames.map((ingredient, index) => (
+        <div key={index} className="justify-content-between">
+            <div>{ingredient.toUpperCase()}</div>
+            <div>{ingredientsAmount[ingredient]}x</div>
+        </div>
+    ));
+};
 
-    render = () => {
-        return <div className="toppings">{this.amountOfIngredients()}</div>;
-    };
-}
+const Topping = ({ ingredientItems }) => (
+    <div className="toppings">
+        <IngredientList ingredientItems={ingredientItems} />
+    </div>
+);
 
 const mapStateToProps = (state) => ({
     ingredientItems: state.ingredients.items,

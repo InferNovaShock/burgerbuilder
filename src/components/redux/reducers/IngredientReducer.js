@@ -6,8 +6,9 @@ const initalState = {
 };
 
 const ingredientReducer = (ingredients, ingredientToRemove) => {
-    for (let ingredient in ingredients) {
-        if (ingredients[ingredient] === ingredientToRemove) {
+    for (let ingredient = 0; ingredient < ingredients.length; ingredient++) {
+        const currentIngredient = ingredients[ingredient];
+        if (currentIngredient === ingredientToRemove) {
             ingredients.splice(ingredient, 1);
             return [...ingredients];
         }
