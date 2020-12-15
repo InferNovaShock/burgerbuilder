@@ -13,3 +13,5 @@ export const removeIngredients = (ingredient) => (dispatch) => {
         payload: ingredient,
     });
 };
+
+//Just for a test
