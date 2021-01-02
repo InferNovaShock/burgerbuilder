@@ -28,12 +28,14 @@ const App = () => {
     return (
         <Provider store={Store}>
             <div className="container">
-                <div className="row">
-                    <div className="col ingredients-component">
-                        <Ingredients ingredients={ingredients} />
-                    </div>
+                <div className="overflow-auto row h-50 flex-y">
                     <div className="col burger-component">
                         <Burger />
+                    </div>
+                </div>
+                <div className="row space-between">
+                    <div className="col ingredients-component">
+                        <Ingredients ingredients={ingredients} />
                     </div>
                     <div className="col toppings-component">
                         <Toppings ingredients={ingredients} />

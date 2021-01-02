@@ -1,3 +1,7 @@
+:root {
+    font-size: 16px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,12 +11,17 @@
 body {
     background-color: rgb(247, 239, 244);
     font-family: sans-serif;
-    padding: 30px;
+    padding: 2rem;
 }
 
 .container {
     max-width: 1140px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.h-50 {
+    height: 50vh;
 }
 
 .row {
@@ -22,7 +31,6 @@ body {
 
 .col {
     flex-basis: 0;
-    -webkit-box-flex: 1;
     flex-grow: 1;
     max-width: 100%;
 }
@@ -53,4 +61,12 @@ body {
 .flex-y {
     display: flex;
     align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.overflow-auto {
+    overflow: auto;
 }

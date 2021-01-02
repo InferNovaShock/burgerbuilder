@@ -15,13 +15,19 @@ const ingredientReducer = (ingredients, ingredientToRemove) => {
     }
 };
 
-export default (state = initalState, action) => {
+const IngredientReducer = (state = initalState, action) => {
     switch (action.type) {
         case ADD_INGREDIENTS:
-            return {
-                ...state,
-                items: [...state.items, action.payload],
-            };
+            if (state.items.length < 20) {
+                return {
+                    ...state,
+                    items: [...state.items, action.payload],
+                };
+            } else {
+                return {
+                    ...state,
+                };
+            }
         case REMOVE_INGREDIENTS:
             if (
                 state.items.length > 0 &&
@@ -46,3 +52,5 @@ export default (state = initalState, action) => {
             return state;
     }
 };
+
+export default IngredientReducer;
