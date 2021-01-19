@@ -1,2 +1,4 @@
 # burgerbuilder
-An app that let's you build burgers.
+Build delicious burgers !
+
+![Showcase of burger builder](./showcase.gif)
